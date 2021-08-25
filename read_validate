@@ -7,7 +7,7 @@ function invalid_input() {
 	exit 1
 }
 
-read -p "Enter any single item > "
+read -p "Enter any single item for validation > "
 
 # input is empty (invalid)
 [[ -z "$REPLY" ]] && invalid_input
@@ -21,7 +21,7 @@ if [[ "$REPLY" =~ ^[-[:alnum:]\._]+$ ]]; then
 	if [[ -e "$REPLY" ]]; then
 		echo "And file '$REPLY' exists."
 	else
-		echo "However, file '$REPLY does not exist."
+		echo "However, file '$REPLY' does not exist."
 	fi
 
 	# is input a floating point number?
