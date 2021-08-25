@@ -7,7 +7,7 @@ function invalid_input() {
 	exit 1
 }
 
-read -p "Enter a single item > "
+read -p "Enter any single item > "
 
 # input is empty (invalid)
 [[ -z "$REPLY" ]] && invalid_input
