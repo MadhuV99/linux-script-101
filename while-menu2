@@ -8,7 +8,7 @@ function pause() {
 
 DELAY=3 # Number of seconds to display results
 
-while [[ "$REPLY" != 0 ]]; do
+while true; do
 	clear
 	cat <<- _EOF_
 		Please Select:
@@ -25,11 +25,13 @@ _EOF_
 			echo "hostname: $HOSTNAME"
 			uptime
 			# sleep "$DELAY"
-			pause
+			$(pause)
+			continue
 		fi
 		if [[ "$REPLY" == 2 ]]; then
 			df -h
 			sleep "$DELAY"
+			continue
 		fi
 		if [[ "$REPLY" == 3 ]]; then
 			if [[ "$(id -u)" -eq 0 ]]; then
@@ -40,10 +42,14 @@ _EOF_
 				du -sh "$HOME"
 			fi
 			sleep "$DELAY"
+			continue
+		fi
+		if [[ "$REPLY" == 0 ]]; then
+			break
 		fi
 	else
 		echo "Invalid entry."
 		sleep "$DELAY"
 	fi
 done
-
+echo "Program Terminated."
