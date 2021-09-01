@@ -1,0 +1,12 @@
+##!/bin/bash
+
+# param-ul: case conversion via parameter expansion
+
+if [[ -n "$1" ]]; then
+	echo "ALL lower(,,): ${1,,}"
+	echo "First lower(,): ${1,}"
+	echo "ALL upper(^^): ${1^^}"
+	echo "First upper(^): ${1^}"
+fi
+
+

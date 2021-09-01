@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# declare-ul: demo case cnversion via declare
+
+declare -u upper
+declare -l lower
+
+if [[ $1 ]]; then
+	upper="$1"
+	lower="$1"
+	echo "UPPER: $upper"
+	echo "LOWER: $lower"
+fi
+
