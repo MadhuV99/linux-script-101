@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# array-sort: Sort an array
+
+foo=(a b c d e f)
+
+echo "Original array: ${foo[@]}"
+oof=($(for i in "${foo[@]}"; do echo $i; done | sort -r))
+echo "Sorted array:   ${oof[@]}"
+
